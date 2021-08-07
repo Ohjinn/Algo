@@ -16,7 +16,7 @@ public class c1_2 {
         return answer;
     }
 
-    public String solution2(String str){
+    public String solution2_2(String str){
         String answer = "";
         for(char x : str.toCharArray()){
             if(Character.isLowerCase(x)) answer += Character.toUpperCase(x);
