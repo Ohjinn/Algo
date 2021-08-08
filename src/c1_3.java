@@ -2,7 +2,7 @@ import java.util.Scanner;
 //find the longest word in the sentence
 public class c1_3 {
 
-    public String solution(String str1){
+    private String solution(String str1){
         String answer = "";
 
         String[] arr = str1.split(" ");
@@ -14,7 +14,7 @@ public class c1_3 {
         return answer;
     }
 
-    public String solution3_2(String str1){
+    private String solution3_2(String str1){
         String answer = "";
         int m = Integer.MIN_VALUE, pos;
         while((pos = str1.indexOf(' '))!= -1){

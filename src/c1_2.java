@@ -1,7 +1,7 @@
 import java.util.*;
 //Uppercase to Lowercase, Lowercase to Uppercase
 public class c1_2 {
-    public String solution(String str){
+    private String solution(String str){
         String answer = "";
         for(char x : str.toCharArray()){
             if(x >= 65 && x <= 90){
@@ -16,7 +16,7 @@ public class c1_2 {
         return answer;
     }
 
-    public String solution2_2(String str){
+    private String solution2_2(String str){
         String answer = "";
         for(char x : str.toCharArray()){
             if(Character.isLowerCase(x)) answer += Character.toUpperCase(x);

@@ -1,27 +1,34 @@
 import java.util.Scanner;
 
-//take the number of words and print out reversed words
 public class Main {
-    private void solution(int n, String[] str){
-        for(int i = 0; i < n; i++){
-            String str2 = "";
-            for(int j = str[i].length() - 1; j >= 0 ; j--){
-                str2 = str2 + str[i].charAt(j);
+
+    private String solution(String str){
+        String answer = "";
+        char[] ck = new char[26];
+        char[] s = str.toCharArray();
+        for(int i = 0; i < str.length(); i++){
+            if(ck[s[i] - 97] == 0){
+                answer += (Character)s[i];
+                ck[s[i]-97]++;
             }
-            System.out.println(str2);
         }
+        return answer;
     }
 
+    private String solution1_6(String str){
+        String answer = "";
+        for(int i = 0; i < str.length(); i++){
+            if(str.indexOf(str.charAt(i)) == i) answer+= str.charAt(i);
+        }
+        return answer;
+    }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        int number = kb.nextInt();
-        String[] words = new String[number];
+        String word = "";
+        word = kb.next();
 
-        for(int i = 0; i < number; i++){
-            words[i] = kb.next();
-        }
-        T.solution(number, words);
+        System.out.println(T.solution(word));
     }
 }
