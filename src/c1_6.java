@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class c1_6 {
 
     private String solution(String str){
         String answer = "";
@@ -24,7 +24,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c1_6 T = new c1_6();
         Scanner kb = new Scanner(System.in);
         String word = "";
         word = kb.next();
