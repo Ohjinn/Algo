@@ -14,7 +14,7 @@ public class c1_3 {
         return answer;
     }
 
-    private String solution3_2(String str1){
+    private String solution3_1(String str1){
         String answer = "";
         int m = Integer.MIN_VALUE, pos;
         while((pos = str1.indexOf(' '))!= -1){
@@ -36,6 +36,6 @@ public class c1_3 {
         Scanner kb = new Scanner(System.in);
         String str1 = kb.nextLine();
 
-        System.out.println(T.solution3_2(str1));
+        System.out.println(T.solution3_1(str1));
     }
 }

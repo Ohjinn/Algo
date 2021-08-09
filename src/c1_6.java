@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
+//removing duplicated character
 public class c1_6 {
-
     private String solution(String str){
         String answer = "";
         char[] ck = new char[26];
@@ -15,7 +15,7 @@ public class c1_6 {
         return answer;
     }
 
-    private String solution1_6(String str){
+    private String solution6_1(String str){
         String answer = "";
         for(int i = 0; i < str.length(); i++){
             if(str.indexOf(str.charAt(i)) == i) answer+= str.charAt(i);

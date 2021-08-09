@@ -8,8 +8,6 @@ class c1_1{
         for(char x : str.toCharArray()){
             if(x==t) answer++;
         }
-
-
         return answer;
     }
 
