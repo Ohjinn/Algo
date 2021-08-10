@@ -1,57 +1,31 @@
+import java.util.ArrayList;
 import java.util.Scanner;
-//print shortest distance with char input
+
 public class Main {
 
-    private String solution(String str, char c){
-        String answer = "";
-        char[] s = str.toCharArray();
-        for(char a : s){
-            if(c == a){
-                for(int i = 0; i < str.length()/2; i++){
-
-                }
-            }
+    private void solution(int numbers[], int n){
+        int tmp = 0;
+        for(int i = 0; i < n; i++){
+            if(numbers[i] > tmp) System.out.println(numbers[i] + " ");
+            tmp = numbers[i];
         }
-
-        return answer;
     }
 
-    private int[] solution10_1(String s, char t){
-        int[] answer = new int[s.length()];
-        int p = 1000;
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) == t){
-                p = 0;
-                answer[i] = p;
-            }
-            else{
-                p++;
-                answer[i] = p;
-            }
+    private ArrayList<Integer> solution(int n, int[] arr){
+        ArrayList<Integer> ans = new ArrayList<>();
+        ans.add(arr[0]);
+        for(int i = 1; i < n; i++){
+            if(arr[i] > arr[i-1]) ans.add(arr[i]);
         }
-        p = 1000;
-        for(int i = s.length()-1; i >= 0; i--){
-            if(s.charAt(i) == t) p = 0;
-            else{
-                p++;
-                answer[i] = Math.min(answer[i], p);
-            }
-        }
-        return answer;
+        return ans;
     }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        String word = "";
-        word = kb.next();
-        String s = kb.next();
-        char c = s.charAt(0);
-
-        for(int x : T.solution10_1(word, c)){
-            System.out.print(x + " ");
-        }
-
-//        System.out.println(T.solution10_1(word, c));
+        int n = kb.nextInt();
+        int[] numbers = new int[n];
+        for(int i = 0; i < n; i++) numbers[i] = kb.nextInt();
+        T.solution(numbers, n);
     }
 }
