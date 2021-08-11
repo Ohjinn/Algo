@@ -1,3 +1,5 @@
+package section1;
+
 import java.util.Scanner;
 //find how many words are existing in the sentence
 class c1_1{

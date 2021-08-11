@@ -1,4 +1,5 @@
-import java.util.Locale;
+package section1;
+
 import java.util.Scanner;
 
 public class c1_8 {

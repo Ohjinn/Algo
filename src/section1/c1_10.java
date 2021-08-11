@@ -1,3 +1,5 @@
+package section1;
+
 import java.util.Scanner;
 //print shortest distance with char input
 public class c1_10 {

@@ -1,12 +1,14 @@
+package section2;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class c2_1 {
 
     private void solution(int numbers[], int n){
         int tmp = 0;
         for(int i = 0; i < n; i++){
-            if(numbers[i] > tmp) System.out.println(numbers[i] + " ");
+            if(numbers[i] > tmp) System.out.print(numbers[i] + " ");
             tmp = numbers[i];
         }
     }
@@ -21,7 +23,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c2_1 T = new c2_1();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int[] numbers = new int[n];

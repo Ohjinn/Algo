@@ -1,4 +1,5 @@
-import java.util.Locale;
+package section1;
+
 import java.util.Scanner;
 //회문 문자열 'YES' or 'NO'
 public class c1_7 {

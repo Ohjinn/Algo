@@ -1,3 +1,5 @@
+package section1;
+
 import java.util.Scanner;
 //find the longest word in the sentence
 public class c1_3 {

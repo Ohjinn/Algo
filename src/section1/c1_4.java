@@ -1,4 +1,5 @@
-import javax.lang.model.type.ArrayType;
+package section1;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

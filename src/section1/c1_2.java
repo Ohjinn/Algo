@@ -1,3 +1,5 @@
+package section1;
+
 import java.util.*;
 //Uppercase to Lowercase, Lowercase to Uppercase
 public class c1_2 {
