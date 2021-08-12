@@ -2,40 +2,40 @@ package section2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-//prime number, same logic
 public class Main {
 
-    private int solution(int n){
-        int[] answer = new int[200001];
-        int cnt = 0;
-        for(int i = 2; i <= n; i++){
-            for(int j = 2; i * j <= n; j++){
-                answer[i * j] = 1;
+    private int solution(int n, int[][] numbers){
+        int answer = 0, row, col, hi = 0, x = 0, y = 0;
+        for(int i = 0; i < n; i++){
+            col = 0;
+            row = 0;
+            for(int j = 0; j < n; j++){
+                col += numbers[i][j];
+                row += numbers[j][i];
+                if(col > row) hi = col;
+                else hi = row;
             }
-            if(answer[i] == 0) cnt++;
+            if(hi > answer) answer = hi;
+            x += numbers[i][i];
+            y += numbers[i][n - i - 1];
         }
-        return cnt;
-    }
-
-    private int solution5_1(int n){
-        int answer = 0;
-        int[] ch = new int[n + 1];
-        for(int i = 2; i <= n; i++){
-            if(ch[i] == 0){
-                answer++;
-                for(int j = i; j <= n; j = j + i){
-                    ch[j] = 1;
-                }
-            }
-        }
+        if(x > y) if(x > answer) answer = x;
+        else if(y > x) if(y > answer) answer = y;
         return answer;
     }
+
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
-        System.out.println(T.solution(n));
-    }
+        int numbers[][] = new int[n][n];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                numbers[i][j] = kb.nextInt();
+            }
+        }
+        System.out.println(T.solution(n, numbers));
 
+    }
 }
