@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class c3_6 {
 
     private int solution(int[] a, int n, int m){
         int answer = 0, wildcard = 0, cnt = 0;
@@ -40,7 +40,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c3_6 T = new c3_6();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int m = kb.nextInt();
