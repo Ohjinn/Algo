@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class c4_3 {
 
     private ArrayList solution(int n, int m, int[] arr){
         ArrayList answer = new ArrayList(n);
@@ -40,7 +40,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c4_3 T = new c4_3();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int m = kb.nextInt();
