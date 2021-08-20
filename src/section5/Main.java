@@ -4,40 +4,21 @@ import java.util.*;
 
 public class Main {
 
-    private int solution(String str){
-        Stack<Integer> stack = new Stack<>();
-        for(char x : str.toCharArray()){
-            if((x != '+') && (x != '-') && (x != '/') && (x != '*')) {
-                stack.push((int)x - 48);
-            }
-            else if(x == '+') {
-                int a = stack.pop();
-                int b = stack.pop();
-                stack.push(b + a);
-            }
-            else if(x == '-') {
-                int a = (int)stack.pop();
-                int b = (int)stack.pop();
-                stack.push(b - a);
-            }
-            else if(x == '*') {
-                int a = stack.pop();
-                int b = stack.pop();
-                stack.push(b * a);
-            }
-            else if(x == '/') {
-                int a = stack.pop();
-                int b = stack.pop();
-                stack.push(b / a);
-            }
+    private int solution(int n, int m){
+        int answer = 0;
+        int[] arr = new int[n + 1];
+        for(int i = 1; i <= n; i++) arr[i] = i;
+        for(int i = 1; i <= n; i++) {
+
         }
-        return stack.pop();
+        return answer;
     }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        String a = kb.next();
-        System.out.print(T.solution(a));
+        int a = kb.nextInt();
+        int b = kb.nextInt();
+        System.out.print(T.solution(a, b));
     }
 }

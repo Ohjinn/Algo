@@ -13,11 +13,30 @@ public class c5_3 {
                     if ((!stack.empty()) && (stack.peek() == arr[j][basket[i]])) {
                         stack.pop();
                         answer += 2;
-
                     } else {
                         stack.push(arr[j][basket[i]]);
                     }
                     arr[j][basket[i]] = 0;
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
+
+    private int solution3_1(int[][] board, int[] moves){
+        int answer = 0;
+        Stack<Integer> stack = new Stack<>();
+        for(int pos : moves){
+            for(int i = 0; i < board.length; i++){
+                if(board[i][pos-1] != 0){
+                    int tmp = board[i][pos-1];
+                    board[i][pos-1]=0;
+                    if(stack.isEmpty() && tmp == stack.peek()){
+                        answer+=2;
+                        stack.pop();
+                    }
+                    else stack.push(tmp);
                     break;
                 }
             }
