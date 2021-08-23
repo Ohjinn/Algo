@@ -1,36 +1,36 @@
 package section6;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    //버블
-    private int[] solution(int a, int[] arr) {
-        for (int i = 0; i < a; i++) {
-            for (int j = i; j < a; j++) {
-                if (arr[i] > arr[j]) {
-                    int tmp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = tmp;
+
+    private char solution(int size, int[] arr) {
+        char answer = 'U';
+        int[] cache = new int[size];
+        for(int x : arr){
+            boolean ck = false;
+            for(int i = 0; i < size; i++) if(x == cache[i]) ck = true;
+            if(ck == false) {
+                for(int i = size - 1; i >= 1; i--) {
+                    cache[i] = cache[i-1];
                 }
+                cache[0] = x;
+            }
+            else {
+                return 'D';
             }
         }
-        return arr;
+        return answer;
     }
 
-    //선택
-    private int[] solution1_1(int n, int[] arr) {
-        for (int i = 0; i < n - 1; i++) {
-            int idx = i;
-            for (int j = i + 1; j < n; j++){
-                if(arr[j] < arr[idx]) idx = j;
-            }
-            int tmp = arr[i];
-            arr[i] = arr[idx];
-            arr[idx] = tmp;
+    private String solution5_1(int n, int[] arr){
+        String answer = "U";
+        Arrays.sort(arr);
+        for(int i = 0; i < n-1; i++){
+            if(arr[i] == arr[i + 1]) return "D";
         }
-        return arr;
+        return answer;
     }
 
     public static void main(String[] args) {
@@ -39,7 +39,6 @@ public class Main {
         int a = kb.nextInt();
         int[] arr = new int[a];
         for (int i = 0; i < a; i++) arr[i] = kb.nextInt();
-        arr = T.solution(a, arr);
-        for (int i = 0; i < a; i++) System.out.print(arr[i] + " ");
+        System.out.println(T.solution(a, arr));
     }
 }
