@@ -2,7 +2,7 @@ package section6;
 
 import java.util.Scanner;
 
-public class c6_123 {
+public class c6_1 {
     //버블
     private int[] solution(int a, int[] arr) {
         for (int i = 0; i < a; i++) {
@@ -44,7 +44,7 @@ public class c6_123 {
     }
 
     public static void main(String[] args) {
-        c6_123 T = new c6_123();
+        c6_1 T = new c6_1();
         Scanner kb = new Scanner(System.in);
         int a = kb.nextInt();
         int[] arr = new int[a];
