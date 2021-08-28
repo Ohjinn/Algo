@@ -11,7 +11,7 @@ class Find{
     }
 }
 
-public class Main {
+public class c7_8 {
     Find root;
     public int BFS1(Find root, int b){
         Queue<Find> Q = new LinkedList<>();
@@ -23,9 +23,8 @@ public class Main {
             int len = Q.size();
             for(int i = 0; i < len; i++){
                 Find cur = Q.poll();
-                System.out.println(cur.data + " ");
                 if(cur.data != b){
-                    if(cur.data > 0 && ck[cur.data - 1] != 1) Q.offer(new Find(cur.data - 1));
+                    if(cur.data - 1 > 0 && ck[cur.data - 1] != 1) Q.offer(new Find(cur.data - 1));
                     ck[cur.data - 1] = 1;
                     if(cur.data > 0 && ck[cur.data + 1] != 1) Q.offer(new Find(cur.data + 1));
                     ck[cur.data + 1] = 1;
@@ -40,7 +39,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c7_8 T = new c7_8();
         Scanner kb = new Scanner(System.in);
         int a = kb.nextInt();
         int b = kb.nextInt();
