@@ -1,10 +1,8 @@
 package section8;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
-public class Main {
+public class c8_4 {
     private void DFS(int L, int m, int[] arr, int[] mem) {
         if(L == m) {
             for(int i = 0; i < m; i++) System.out.print(mem[i] + " ");
@@ -19,9 +17,23 @@ public class Main {
         }
     }
 
+    static int[] pm;
+    static int n, m;
+    private void DFS(int L){
+        if(L==m){
+            for(int x : pm) System.out.print(x + " ");
+            System.out.println();
+        }
+        else{
+            for(int i = 1; i <= n; i++){
+                pm[L] = i;
+                DFS(L + 1);
+            }
+        }
+    }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        c8_4 T = new c8_4();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int m = kb.nextInt();
