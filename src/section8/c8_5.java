@@ -9,7 +9,7 @@ import static java.lang.System.exit;
 
 public class c8_5 {
     static int n, n_coin = Integer.MAX_VALUE, change;
-
+    static int m, answer = Integer.MAX_VALUE;
     /*
     DFS에서 L은 내림차순으로 정렬된 배열의 위치, coin은 현재 코인의 갯수,
     sum은 현재까지 거스름돈의 합, arr는 내림차순으로 정렬된 arr
@@ -21,6 +21,20 @@ public class c8_5 {
         } else {
             for(int i = 0; i < arr.length; i++) {
                 DFS(coin + 1, sum + arr[i], arr);
+            }
+        }
+    }
+
+    private void DFS1(int L, int sum, Integer[] arr){
+        if(sum > m) return;
+        if(L >= answer) return;
+        if (sum == m) {
+            if(sum==m){
+                answer = Math.min(answer, L);
+            }
+        }else{
+            for(int i = 0; i < n; i++){
+                DFS(L + 1, sum + arr[i], arr);
             }
         }
     }
