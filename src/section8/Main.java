@@ -1,36 +1,48 @@
 package section8;
 
+import java.awt.*;
 import java.util.*;
 
-class loca{
-    int x, y;
-
-    public loca(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
 
 public class Main {
-    static int[][] maze;
-    int[] a = {1, 0, -1, 0};
-    int[] b = {0, 1, 0, -1};
+    static int answer = 0, n;
+    static int[] dx = {-1, -1, 0, 1, 1, 1, 0, -1};
+    static int[] dy = {0, 1, 1, 1, 0, -1, -1, -1};
 
-    private int BFS(loc root) {
-        Queue<loc> Q = new LinkedList<>();
+    private void DFS(int x, int y, int[][] board){
+        for(int i = 0; i < dx.length; i++){
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            if(nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == 1) {
+                board[nx][ny] = 0;
+                DFS(nx, ny, board);
+            }
+        }
+    }
 
+    public void solution(int[][] board){
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(board[i][j] == 1){
+                    answer++;
+                    board[i][j] = 0;
+                    DFS(i, j, board);
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
-        int a = kb.nextInt();
-        int b = kb.nextInt();
-        maze = new int[b][a];
-        for(int i = 1; i <= b; i++){
-            for(int j = 1; j <= a; j++){
-                maze[i][j] = kb.nextInt();
+        n = kb.nextInt();
+        int[][] arr = new int[n][n];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                arr[i][j] = kb.nextInt();
             }
         }
+        T.solution(arr);
+        System.out.println(answer);
     }
 }
